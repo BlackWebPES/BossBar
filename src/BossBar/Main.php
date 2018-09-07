@@ -36,11 +36,11 @@ class Main extends PluginBase implements Listener{
 	public function onJoin(PlayerJoinEvent $ev){
 		if (in_array($ev->getPlayer()->getLevel(), $this->getWorlds())){
 			if ($this->entityRuntimeId === null){
-				$this->entityRuntimeId = API::addBossBar([$ev->getPlayer()], 'Please wait loading BossBar...');
-				$this->getServer()->getLogger()->debug($this->entityRuntimeId === NULL ? 'Couldn\'t add BossBar' : 'Successfully added BossBar with EID: ' . $this->entityRuntimeId);
+				$this->entityRuntimeId = API::addBossBar([$ev->getPlayer()], 'please wait loading bossbar');
+				$this->getServer()->getLogger()->debug($this->entityRuntimeId === NULL ? 'bossbar error' : 'successfully added bossbar with eid: ' . $this->entityRuntimeId);
 			} else{
 				API::sendBossBarToPlayer($ev->getPlayer(), $this->entityRuntimeId, $this->getText($ev->getPlayer()));
-				$this->getServer()->getLogger()->debug('Sendt BossBar with existing EID: ' . $this->entityRuntimeId);
+				$this->getServer()->getLogger()->debug('sent bossbar with existing eid: ' . $this->entityRuntimeId);
 			}
 		}
 	}
