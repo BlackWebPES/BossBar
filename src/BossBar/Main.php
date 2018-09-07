@@ -142,7 +142,7 @@ class Main extends PluginBase implements Listener{
 			case 1:
 				foreach ($worldnames as $name){
 					if (!is_null($level = $this->getServer()->getLevelByName($name))) $worlds[] = $level;
-					else $this->getLogger()->warning("Config error! World " . $name . " not found!");
+					else $this->getLogger()->warning("config error world " . $name . " not found");
 				}
 				break;
 			case 2:
